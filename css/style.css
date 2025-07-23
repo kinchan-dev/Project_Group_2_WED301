@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Quicksand:wght@400;700&display=swap');
+
+:root {
+  --bg-dark: #0D1B2A;
+  --bg-mid: #1B263B;
+  --accent: #6ECEDA;
+  --soft-white: #F4F4F8;
+  --coral: #FFB6B9;
+}
+      header {
+      background: linear-gradient(to right, #041C32, #04293A);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    header.scrolled {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      background-color: #02111b !important;
+    }
+    header a,
+    header span,
+    header i {
+      color: #ffffff !important;
+      transition: color 0.3s;
+    }
+    header a:hover {
+      color: #5EDFFF !important;
+    }
+    header .btn-outline-dark {
+      color: #ffffff;
+      border-color: #ffffff;
+    }
+    header .btn-outline-dark:hover {
+      background-color: #5EDFFF;
+      color: #041C32;
+    }
+    header .btn-light {
+      background-color: #5EDFFF;
+      border: none;
+    }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--soft-white);
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, .navbar-brand {
+  font-family: 'Quicksand', sans-serif;
+  color: var(--accent);
+}
+
+/* Navbar */
+.navbar {
+  background-color: rgba(13, 27, 42, 0.95);
+  backdrop-filter: blur(6px);
+}
+
+.nav-link {
+  color: var(--soft-white) !important;
+  margin: 0 8px;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--coral) !important;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(13, 27, 42, 0.6), rgba(13, 27, 42, 0.6)),
+              url('https://images.unsplash.com/photo-1532274402917-5aadf881bdfb') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  clip-path: ellipse(100% 85% at 50% 15%);
+  position: relative;
+}
+
+/* Button */
+.btn-outline-light {
+  border-color: var(--accent);
+  color: var(--accent);
+  border-radius: 50px;
+  padding: 10px 28px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.btn-outline-light:hover {
+  background-color: var(--accent);
+  color: var(--bg-dark);
+  box-shadow: 0 8px 20px rgba(110, 206, 218, 0.6);
+}
+
+/* Section padding */
+section {
+  padding: 80px 0;
+}
+
+/* About & Workspace */
+#about, #workspace {
+  background-color: var(--bg-mid);
+  border-radius: 40px;
+  margin: 60px auto;
+  max-width: 1100px;
+  padding: 60px;
+}
+
+/* Card */
+.card {
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: var(--bg-mid);
+  color: var(--soft-white);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px var(--accent);
+}
+
+.card-title {
+  color: var(--accent);
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+
+/* Blockquote */
+blockquote {
+  position: relative;
+  padding: 2rem 1.2rem;
+  border-left: 4px solid var(--accent);
+  background-color: #273340;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+blockquote::before {
+  content: "\201C";
+  font-size: 4rem;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  color: var(--accent);
+}
+
+blockquote footer {
+  margin-top: 10px;
+  color: #a0b9d6;
+}
+
+/* Form */
+form input, form textarea {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 12px;
+}
+
+form button {
+  border-radius: 30px;
+  padding: 10px 30px;
+  font-weight: 500;
+}
+
+/* Footer */
+footer {
+  background-color: #15236c;
+  color: #fff;
+  padding: 60px 0;
+}
+footer h5 {
+  color: #7296f1;
+}
+footer a {
+  color: #7950ae;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+footer .icon-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #dee0e471;
+  color: #c06565;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-right: 10px;
+}
+footer .store-btn {
+  border: 1px solid #ecd1d1;
+  padding: 6px 14px;
+  margin-right: 10px;
+  background: none;
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+  #about, #workspace { padding: 30px; }
+  .card-img-top { height: 200px; }
+}

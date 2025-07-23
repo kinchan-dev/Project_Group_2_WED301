@@ -1,0 +1,107 @@
+/* ====== ABOUT US SECTION ====== */
+.about-section {
+  background: linear-gradient(to bottom right, #f9f9f9, #fff);
+  padding: 80px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 25px;
+}
+
+.about-section p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 18px;
+}
+
+.about-section img {
+  border-radius: 16px;
+  max-width: 100%;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
+}
+
+.about-section img:hover {
+  transform: scale(1.03);
+}
+
+/* Responsive tweaks */
+@media (max-width: 767px) {
+  .about-section {
+    padding: 60px 20px;
+  }
+
+  .about-section h2 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .about-section p {
+    text-align: center;
+  }
+}
+.about-section .col-md-6:nth-child(2) {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: 1.3rem;
+  color: white;
+  text-decoration: none;
+  background-color: gray; /* fallback */
+  transition: none !important;
+}
+
+/* Màu nền theo từng mạng xã hội chuẩn */
+.icon-facebook {
+  background-color: #1877f2;
+}
+
+.icon-instagram {
+  background-color: #e1306c; /* Màu hồng Instagram không gradient */
+}
+
+.icon-youtube {
+  background-color: #ff0000;
+}
+
+.icon-tiktok {
+  background-color: #25f4ee;  /* Cyan TikTok */
+  color: black;               /* Icon màu đen */
+}
+
+.icon-email {
+  background-color: #ff9900;  /* Màu cam nổi bật hơn cho Email */
+}
+
+.about-section .col-md-8 {
+  max-width: 700px;
+  margin: auto;
+}
+.text-justify {
+  text-align: justify;
+  text-justify: inter-word;
+}

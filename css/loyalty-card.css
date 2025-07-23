@@ -1,0 +1,289 @@
+/* Variables for easy customization */
+:root {
+    --primary-color: #2193b0; /* A soothing blue-green */
+    --secondary-color: #6dd5ed; /* Lighter shade of primary */
+    --accent-color: #ffc107; /* A contrasting yellow for highlights */
+    --text-dark: #343a40;
+    --text-muted: #6c757d;
+    --shadow-light: 0 4px 15px rgba(0,0,0,0.08);
+    --shadow-heavy: 0 10px 30px rgba(0,0,0,0.15);
+    --border-radius-card: 15px;
+}
+
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif; /* A clean, readable font */
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg); /* Consistent light background */
+}
+
+
+/* Hero Section */
+#loyalty-hero {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    color: white;
+    min-height: 500px; /* Adjust height for better visual */
+    display: flex; /* Flexbox for centering */
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0; /* Add padding for smaller screens */
+}
+
+#loyalty-hero h1 {
+    font-size: 3.5em; /* Larger, more impactful heading */
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+#loyalty-hero p.lead {
+    font-size: 1.5em;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.hero-bg-circle {
+    position: absolute;
+    background-color: rgba(255,255,255,0.1); /* Semi-transparent white circles */
+    border-radius: 50%;
+}
+
+.circle-1 {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 15%;
+}
+
+.circle-2 {
+    width: 300px;
+    height: 300px;
+    bottom: 5%;
+    right: 10%;
+}
+
+.btn-light.rounded-pill {
+    padding: 12px 30px;
+    font-weight: bold;
+    border: 2px solid var(--white);
+    transition: all 0.3s ease;
+}
+
+.btn-light.rounded-pill:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--white);
+    transform: scale(1.05); /* Subtle scale effect */
+}
+
+/* General Section Headings */
+h2 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color); /* Underline for headings */
+    border-radius: 2px;
+}
+
+/* Benefits Section */
+#benefits {
+    padding: 60px 0;
+}
+
+.loyalty-benefit-card {
+    border-radius: var(--border-radius-card);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    background-color: var(--white);
+    height: 100%; /* Ensure cards are same height */
+}
+
+.loyalty-benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-heavy);
+    background-color: #e6f7ff; /* Lighter background on hover */
+}
+
+.benefit-icon {
+    font-size: 4em; /* Larger icons */
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.loyalty-benefit-card:hover .benefit-icon {
+    color: var(--accent-color); /* Change icon color on hover */
+}
+
+.loyalty-benefit-card .card-title {
+    color: var(--text-dark);
+    font-size: 1.3em;
+}
+
+.loyalty-benefit-card .card-text {
+    font-size: 0.95em;
+}
+
+/* How It Works Section */
+#how-it-works {
+    background-color: var(--light-bg);
+    padding: 60px 0;
+}
+
+.step-icon-container {
+    background-color: var(--white);
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    width: 120px; /* Larger step icons */
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    box-shadow: var(--shadow-light);
+    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.step-icon-container:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.step-icon {
+    font-size: 4em;
+    color: var(--primary-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.step-icon-container:hover .step-icon {
+    color: var(--white); /* White icon on hover */
+    transform: scale(1.1);
+}
+
+.arrow-icon {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin: 0 15px;
+    animation: bounceRight 1.5s infinite ease-in-out; /* Continuous subtle animation */
+}
+
+@keyframes bounceRight {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+}
+
+/* Call to Action Section */
+#join-now {
+    background: linear-gradient(45deg, #1e7e96, #2193b0); /* Slightly different gradient */
+    color: white;
+    padding: 80px 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+#join-now h2 {
+    color: var(--white);
+}
+
+#join-now h2::after {
+    background-color: var(--accent-color); /* Accent color underline */
+}
+
+.loyalty-cta-btn {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--text-dark); /* Dark text on yellow button */
+    padding: 15px 40px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.loyalty-cta-btn:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+    border-color: #e0a800;
+    color: var(--white); /* White text on hover */
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) { /* Small devices (phones) */
+    #loyalty-hero {
+        min-height: 350px;
+        padding: 60px 0;
+    }
+    #loyalty-hero h1 {
+        font-size: 2.2em;
+    }
+    #loyalty-hero p.lead {
+        font-size: 1.1em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    h2::after {
+        width: 60px;
+    }
+    .hero-bg-circle {
+        display: none; /* Hide background circles on small screens */
+    }
+    .benefit-icon {
+        font-size: 3em;
+    }
+    .step-icon-container {
+        width: 90px;
+        height: 90px;
+    }
+    .step-icon {
+        font-size: 3em;
+    }
+    .arrow-icon {
+        display: none; /* Hide arrows between steps on mobile */
+    }
+    .loyalty-cta-btn {
+        padding: 10px 30px;
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) { /* Medium devices (tablets) */
+    #loyalty-hero {
+        min-height: 400px;
+    }
+    #loyalty-hero h1 {
+        font-size: 2.8em;
+    }
+    .hero-bg-circle.circle-1 {
+        width: 150px;
+        height: 150px;
+    }
+    .hero-bg-circle.circle-2 {
+        width: 250px;
+        height: 250px;
+    }
+    .benefit-icon {
+        font-size: 3.5em;
+    }
+    .step-icon-container {
+        width: 100px;
+        height: 100px;
+    }
+    .step-icon {
+        font-size: 3.5em;
+    }
+}

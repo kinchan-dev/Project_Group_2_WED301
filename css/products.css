@@ -1,0 +1,533 @@
+/* === products.css === */
+
+/* PHẦN 1: STYLING CHO SECTION PRODUCTS */
+/* Background cho toàn bộ phần menu sản phẩm */
+#products {
+  /* Tạo background với gradient (chuyển màu từ xanh dương sang tím) */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* Để tạo hiệu ứng overlay */
+  position: relative;
+  /* Ẩn các phần tử con tràn ra ngoài */
+  overflow: hidden;
+}
+
+/* Tạo hiệu ứng chấm tròn phía sau (như sứa phát sáng) */
+#products::before {
+  content: "";
+  /* Đặt ở vị trí tuyệt đối để nằm phía sau */
+  position: absolute;
+  /* Căn full màn hình */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* SVG tạo các chấm tròn nhỏ như bong bóng */
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="grad1" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:rgba(114,230,220,0.1);stop-opacity:1" /><stop offset="100%" style="stop-color:rgba(114,230,220,0);stop-opacity:0" /></radialGradient></defs><circle cx="20" cy="20" r="3" fill="url(%23grad1)"/><circle cx="80" cy="30" r="2" fill="url(%23grad1)"/><circle cx="40" cy="70" r="4" fill="url(%23grad1)"/><circle cx="90" cy="80" r="2.5" fill="url(%23grad1)"/><circle cx="10" cy="60" r="3.5" fill="url(%23grad1)"/></svg>')
+    repeat;
+  /* Làm mờ để không che khuất nội dung */
+  opacity: 0.3;
+  /* Đặt phía sau nội dung chính */
+  z-index: 1;
+}
+
+/* Container chứa nội dung chính */
+#products .container {
+  /* Đặt phía trước background */
+  position: relative;
+  z-index: 2;
+}
+
+/* PHẦN 2: STYLING CHO TIÊU ĐỀ */
+/* Tiêu đề chính của section */
+#products h2 {
+  /* Màu chữ trắng */
+  color: #ffffff;
+  /* Thêm bóng đổ cho chữ để nổi bật hơn */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  /* Khoảng cách dưới tiêu đề */
+  margin-bottom: 1rem;
+}
+
+/* Mô tả dưới tiêu đề */
+#products p {
+  /* Màu trắng với độ trong suốt */
+  color: rgba(255, 255, 255, 0.9);
+  /* Kích thước chữ */
+  font-size: 1.1rem;
+}
+
+/* PHẦN 3: STYLING CHO CARD SẢN PHẨM */
+/* Container chứa thông tin từng sản phẩm */
+.card {
+  /* Bỏ viền mặc định */
+  border: none;
+  /* Bo tròn góc */
+  border-radius: 20px;
+  /* Ẩn nội dung tràn ra ngoài */
+  overflow: hidden;
+  /* Tạo bóng đổ nhẹ */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  /* Hiệu ứng chuyển động mượt mà */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* Background gradient nhẹ */
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  /* Để tạo hiệu ứng overlay */
+  position: relative;
+}
+
+/* Tạo lớp overlay khi hover */
+.card::before {
+  content: "";
+  /* Đặt ở vị trí tuyệt đối */
+  position: absolute;
+  /* Căn full card */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Gradient nhẹ với màu xanh */
+  background: linear-gradient(
+    145deg,
+    rgba(114, 230, 220, 0.05),
+    rgba(103, 126, 234, 0.05)
+  );
+  /* Ẩn ban đầu */
+  opacity: 0;
+  /* Hiệu ứng xuất hiện mượt */
+  transition: opacity 0.3s ease;
+  /* Đặt phía sau nội dung */
+  z-index: 1;
+}
+
+/* Hiệu ứng khi hover vào card */
+.card:hover {
+  /* Di chuyển lên trên và phóng to nhẹ */
+  transform: translateY(-12px) scale(1.02);
+  /* Tăng bóng đổ */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Hiện overlay khi hover */
+.card:hover::before {
+  opacity: 1;
+}
+
+/* PHẦN 4: STYLING CHO HÌNH ẢNH SẢN PHẨM */
+/* Hình ảnh sản phẩm */
+.card-img-top {
+  /* Chiều cao cố định */
+  height: 240px;
+  /* Cắt ảnh vừa khung mà không bị méo */
+  object-fit: cover;
+  /* Bo tròn góc trên */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  /* Hiệu ứng phóng to khi hover */
+  transition: transform 0.4s ease;
+  /* Đặt phía trước overlay */
+  position: relative;
+  z-index: 2;
+}
+
+/* Phóng to ảnh khi hover card */
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+/* PHẦN 5: STYLING CHO NỘI DUNG CARD */
+/* Phần chứa text của card */
+.card-body {
+  /* Background gradient tối */
+  background: linear-gradient(145deg, #1a1a2e, #16213e);
+  /* Chữ màu trắng */
+  color: #fff;
+  /* Bo tròn góc dưới */
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  /* Khoảng cách trong */
+  padding: 25px;
+  /* Đặt phía trước overlay */
+  position: relative;
+  z-index: 2;
+}
+
+/* Tạo thanh màu ở đầu card-body */
+.card-body::before {
+  content: "";
+  /* Đặt ở vị trí tuyệt đối */
+  position: absolute;
+  /* Căn trên cùng, full width */
+  top: 0;
+  left: 0;
+  right: 0;
+  /* Chiều cao thanh màu */
+  height: 3px;
+  /* Gradient 3 màu */
+  background: linear-gradient(90deg, #72e6dc, #667eea, #764ba2);
+  /* Bo tròn góc trên */
+  border-radius: 20px 20px 0 0;
+}
+
+/* PHẦN 6: STYLING CHO TEXT */
+/* Tên sản phẩm */
+.card-title {
+  /* Kích thước chữ */
+  font-size: 1.3rem;
+  /* Độ đậm chữ */
+  font-weight: 700;
+  /* Màu xanh ngọc */
+  color: #72e6dc;
+  /* Khoảng cách dưới */
+  margin-bottom: 12px;
+  /* Tạo chữ gradient (chuyển màu) */
+  background: linear-gradient(45deg, #72e6dc, #4facfe);
+  /* Cắt background theo text (chỉ hiện màu ở chữ) */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* Bỏ bóng chữ */
+  text-shadow: none;
+}
+
+/* Mô tả sản phẩm */
+.card-text {
+  /* Kích thước chữ */
+  font-size: 0.95rem;
+  /* Màu xám sáng */
+  color: #e1e5eb;
+  /* Khoảng cách giữa các dòng */
+  line-height: 1.6;
+  /* Khoảng cách dưới */
+  margin-bottom: 20px;
+}
+
+/* PHẦN 7: STYLING CHO NÚT CHỌN */
+/* Nút "Chọn" trong card */
+.card .btn {
+  /* Độ đậm chữ */
+  font-weight: 600;
+  /* Bo tròn góc */
+  border-radius: 25px;
+  /* Khoảng cách trong nút */
+  padding: 12px 25px;
+  /* Viền trong suốt */
+  border: 2px solid transparent;
+  /* Background gradient */
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  /* Chữ màu trắng */
+  color: white;
+  /* Để tạo hiệu ứng overlay */
+  position: relative;
+  /* Ẩn nội dung tràn ra ngoài */
+  overflow: hidden;
+  /* Hiệu ứng chuyển động mượt */
+  transition: all 0.3s ease;
+  /* Chữ in hoa */
+  text-transform: uppercase;
+  /* Khoảng cách giữa các ký tự */
+  letter-spacing: 0.5px;
+  /* Kích thước chữ */
+  font-size: 0.9rem;
+}
+
+/* Tạo hiệu ứng sáng chạy qua nút */
+.card .btn::before {
+  content: "";
+  /* Đặt ở vị trí tuyệt đối */
+  position: absolute;
+  /* Vị trí ban đầu (ngoài màn hình bên trái) */
+  top: 0;
+  left: -100%;
+  /* Kích thước full nút */
+  width: 100%;
+  height: 100%;
+  /* Gradient trong suốt tạo hiệu ứng sáng */
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), transparent);
+  /* Hiệu ứng di chuyển */
+  transition: left 0.5s ease;
+}
+
+/* Hiệu ứng khi hover nút */
+.card .btn:hover {
+  /* Đổi màu background */
+  background: linear-gradient(45deg, #72e6dc, #4facfe);
+  /* Di chuyển lên trên */
+  transform: translateY(-2px);
+  /* Tạo bóng đổ màu */
+  box-shadow: 0 8px 20px rgba(114, 230, 220, 0.4);
+  /* Đổi màu viền */
+  border-color: #72e6dc;
+}
+
+/* Chạy hiệu ứng sáng khi hover */
+.card .btn:hover::before {
+  left: 100%;
+}
+
+/* Hiệu ứng khi nhấn nút */
+.card .btn:active {
+  transform: translateY(0);
+}
+
+/* PHẦN 8: STYLING CHO MODAL (HỘP THOẠI) */
+/* Container chính của modal */
+.modal-content {
+  /* Bo tròn góc */
+  border-radius: 20px;
+  /* Bỏ viền */
+  border: none;
+  /* Ẩn nội dung tràn */
+  overflow: hidden;
+  /* Bóng đổ đậm */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Header của modal */
+.modal-header {
+  /* Background gradient */
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  /* Chữ trắng */
+  color: white;
+  /* Bỏ viền dưới */
+  border-bottom: none;
+  /* Khoảng cách trong */
+  padding: 20px 25px;
+}
+
+/* Tiêu đề modal */
+.modal-title {
+  /* Độ đậm chữ */
+  font-weight: 700;
+  /* Kích thước chữ */
+  font-size: 1.3rem;
+}
+
+/* Nút đóng modal */
+.btn-close {
+  /* Đảo màu (từ đen thành trắng) */
+  filter: invert(1);
+  /* Độ trong suốt */
+  opacity: 0.8;
+}
+
+/* Hiệu ứng hover nút đóng */
+.btn-close:hover {
+  opacity: 1;
+}
+
+/* Nội dung modal */
+.modal-body {
+  /* Khoảng cách trong */
+  padding: 25px;
+  /* Background gradient nhẹ */
+  background: linear-gradient(145deg, #f8f9fa, #ffffff);
+}
+
+/* PHẦN 9: STYLING CHO FORM TRONG MODAL */
+/* Label của form */
+.form-label {
+  /* Độ đậm chữ */
+  font-weight: 600;
+  /* Màu chữ tối */
+  color: #1a1a2e;
+  /* Khoảng cách dưới */
+  margin-bottom: 8px;
+}
+
+/* Dropdown select */
+.form-select {
+  /* Bo tròn góc */
+  border-radius: 12px;
+  /* Viền xám */
+  border: 2px solid #e9ecef;
+  /* Khoảng cách trong */
+  padding: 10px 15px;
+  /* Hiệu ứng chuyển động */
+  transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi focus vào select */
+.form-select:focus {
+  /* Đổi màu viền */
+  border-color: #72e6dc;
+  /* Tạo viền sáng xung quanh */
+  box-shadow: 0 0 0 0.2rem rgba(114, 230, 220, 0.25);
+}
+
+/* Checkbox/radio khi được chọn */
+.form-check-input:checked {
+  /* Màu nền */
+  background-color: #72e6dc;
+  /* Màu viền */
+  border-color: #72e6dc;
+}
+
+/* Hiệu ứng khi focus vào checkbox/radio */
+.form-check-input:focus {
+  /* Viền sáng xung quanh */
+  box-shadow: 0 0 0 0.2rem rgba(114, 230, 220, 0.25);
+}
+
+/* Label cho checkbox/radio */
+.form-check-label {
+  /* Màu chữ xám */
+  color: #495057;
+  /* Khoảng cách bên trái (tách khỏi checkbox) */
+  margin-left: 8px;
+}
+
+/* PHẦN 10: STYLING CHO FOOTER MODAL */
+/* Footer của modal (chứa các nút) */
+.modal-footer {
+  /* Màu nền nhẹ */
+  background: #f8f9fa;
+  /* Bỏ viền trên */
+  border-top: none;
+  /* Khoảng cách trong */
+  padding: 20px 25px;
+}
+
+/* Tất cả nút trong footer */
+.modal-footer .btn {
+  /* Bo tròn góc */
+  border-radius: 12px;
+  /* Khoảng cách trong nút */
+  padding: 10px 20px;
+  /* Độ đậm chữ */
+  font-weight: 600;
+}
+
+/* Nút chính (Xác nhận) */
+.modal-footer .btn-primary {
+  /* Background gradient */
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  /* Bỏ viền */
+  border: none;
+}
+
+/* Hiệu ứng hover nút chính */
+.modal-footer .btn-primary:hover {
+  /* Đổi màu gradient */
+  background: linear-gradient(45deg, #72e6dc, #4facfe);
+  /* Di chuyển lên trên */
+  transform: translateY(-1px);
+}
+
+/* Nút phụ (Hủy) */
+.modal-footer .btn-secondary {
+  /* Màu xám */
+  background: #6c757d;
+  /* Bỏ viền */
+  border: none;
+}
+
+/* Hiệu ứng hover nút phụ */
+.modal-footer .btn-secondary:hover {
+  /* Màu xám đậm hơn */
+  background: #545b62;
+  /* Di chuyển lên trên */
+  transform: translateY(-1px);
+}
+
+/* PHẦN 11: RESPONSIVE DESIGN (THIẾT KẾ THÍCH ỨNG) */
+/* Quy tắc CSS cho màn hình nhỏ (tablet và mobile) */
+@media (max-width: 768px) {
+  /* Giảm chiều cao ảnh trên mobile */
+  .card-img-top {
+    height: 200px;
+  }
+
+  /* Giảm padding của card-body */
+  .card-body {
+    padding: 20px;
+  }
+
+  /* Giảm kích thước chữ tiêu đề */
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  /* Giảm padding của section */
+  #products {
+    padding: 3rem 0;
+  }
+}
+
+/* PHẦN 12: ANIMATION (HIỆU ỨNG CHUYỂN ĐỘNG) */
+/* Định nghĩa animation xuất hiện từ dưới lên */
+@keyframes fadeInUp {
+  /* Trạng thái ban đầu (ẩn và ở dưới) */
+  from {
+    opacity: 0; /* Trong suốt hoàn toàn */
+    transform: translateY(30px); /* Dịch xuống dưới 30px */
+  }
+  /* Trạng thái cuối (hiện và ở vị trí bình thường) */
+  to {
+    opacity: 1; /* Hiện hoàn toàn */
+    transform: translateY(0); /* Về vị trí ban đầu */
+  }
+}
+
+/* Áp dụng animation cho tất cả card */
+.card {
+  /* Chạy animation fadeInUp trong 0.6 giây */
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Tạo hiệu ứng xuất hiện lần lượt cho từng card */
+/* Card thứ 1 xuất hiện sau 0.1 giây */
+.card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+/* Card thứ 2 xuất hiện sau 0.2 giây */
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+/* Card thứ 3 xuất hiện sau 0.3 giây */
+.card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+/* Card thứ 4 xuất hiện sau 0.4 giây */
+.card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+/* Card thứ 5 xuất hiện sau 0.5 giây */
+.card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+/* Card thứ 6 xuất hiện sau 0.6 giây */
+.card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* 
+=== TÓM TẮT CÁC KHÁI NIỆM CSS QUAN TRỌNG ===
+
+1. GRADIENT: Chuyển màu từ màu này sang màu khác
+   - linear-gradient(góc, màu1, màu2)
+
+2. TRANSITION: Hiệu ứng chuyển động mượt mà
+   - transition: all 0.3s ease (tất cả thuộc tính trong 0.3 giây)
+
+3. TRANSFORM: Biến đổi vị trí, kích thước
+   - translateY(-10px): di chuyển lên 10px
+   - scale(1.05): phóng to 5%
+
+4. BOX-SHADOW: Tạo bóng đổ
+   - box-shadow: x y blur màu
+
+5. Z-INDEX: Thứ tự xếp chồng (số càng lớn càng ở trên)
+
+6. PSEUDO-ELEMENTS: ::before, ::after (tạo phần tử ảo)
+
+7. PSEUDO-CLASSES: :hover, :focus, :active (trạng thái của phần tử)
+
+8. MEDIA QUERIES: @media (max-width: 768px) (CSS cho màn hình khác nhau)
+
+9. KEYFRAMES: @keyframes tên (định nghĩa animation)
+
+10. POSITION: 
+    - relative: vị trí tương đối
+    - absolute: vị trí tuyệt đối
+    - fixed: vị trí cố định
+*/
